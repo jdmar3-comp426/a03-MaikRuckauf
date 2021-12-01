@@ -64,6 +64,6 @@ export function getStatistics(array) {
     var min = Math.min(...array);
     var stddev = Math.sqrt(vari);
     
-    return '{min: ' + min + ', median: ' + median + ', max: ' + max + ', variance: ' + vari + ', mean: ' + mean + ', length: ' + len + ', sum: ' + sum + ', standard_deviation: ' + stddev + '}';
+    return length, sum, mean, median, min, max, vari, stddev;
 }
 
