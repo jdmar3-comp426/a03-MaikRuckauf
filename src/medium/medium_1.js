@@ -8,7 +8,7 @@ import {variance, variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-    var sum = 0
+    var sum = 0;
     for (let i = 0; i < array.length; i++) {
         sum += array[i];
     }
@@ -53,21 +53,15 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
     array.sort();
-    var sum = 0;
-    var median = 0;
-    var half = Math.floor(array.length/2);
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
-    if (array.length % 2) {
-        median = array[half];
-    }
-    else{
-        median = (array[half-1]+array[half])/2.0;
-    }
+    var len = array.length;
+    var sum = getSum(array);
+    var median = getMedian(array);
     var mean = sum/array.length;
-    var variance = variance(array, mean);
+    var vari = variance(array, mean);
+    var max = Math.max(...array);
+    var min = Math.min(...array);
+    var stddev = Math.sqrt(vari);
     
-    return '{min: ' + Math.min(...array) + ', median: ' + median + ', max: ' + Math.max(...array) + ', variance: ' + variance + ', mean: ' + mean + ', length: ' + array.length + ', sum: ' + sum + ', standard_deviation: ' + Math.sqrt(variance) + '}';
+    return '{min: ' + min + ', median: ' + median + ', max: ' + max + ', variance: ' + vari + ', mean: ' + mean + ', length: ' + len + ', sum: ' + sum + ', standard_deviation: ' + stddev + '}';
 }
 
