@@ -54,16 +54,6 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    //array.sort();
-    /*var len = array.length;
-    var su = getSum(array);
-    var med = getMedian(array);
-    var men = su/array.length;
-    var vari = variance(array, men);
-    var maxNum = Math.max(...array);
-    var minNum = Math.min(...array);
-    var stddev = Math.sqrt(vari);*/
-
     const stats = {
         length: array.length,
         sum: getSum(array),
@@ -75,18 +65,5 @@ export function getStatistics(array) {
         standard_deviation: Math.sqrt(variance(array, getSum(array)/array.length))
     };
     return stats;
-
-    /*const stats = {
-        length: len,
-        sum: su,
-        mean: men,
-        median: med,
-        min: minNum,
-        max: maxNum,
-        variance: vari,
-        standard_deviation: stddev
-    };
-    return stats;*/
-    //return "{length: "+len+", sum: "+sum+", mean: "+mean+", median: "+median+", min: "+min+", max: "+max+", variance: "+vari+", standard_deviation: "+stddev+"}";
 }
 
