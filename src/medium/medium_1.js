@@ -59,7 +59,7 @@ export function getStatistics(array) {
     var su = getSum(array);
     var med = getMedian(array);
     var men = su/array.length;
-    var vari = variance(array, mean);
+    var vari = variance(array, men);
     var maxNum = Math.max(...array);
     var minNum = Math.min(...array);
     var stddev = Math.sqrt(vari);
