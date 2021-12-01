@@ -67,7 +67,7 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   let {[password]: omit, ...res} = object
+   let {['password']: omit, ...res} = object
    return res
 }
 
@@ -93,5 +93,6 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-   
+   delete object.keyList
+   return object
 }
