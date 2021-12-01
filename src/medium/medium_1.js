@@ -1,4 +1,4 @@
-import {variance} from "./data/stats_helpers.js";
+import {variance, variance} from "./data/stats_helpers.js";
 
 /**
  * Gets the sum of an array of numbers.
@@ -26,11 +26,10 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    var sum = 0
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
-    return sum/array.length;
+    array.sort();
+    var half = Math.floor(array.length/2);
+    if (array.length % 2) {return array[half];}
+    return (array[half-1]+array[half])/2.0;
 }
 
 /**
@@ -53,10 +52,22 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    var sum = 0
+    array.sort();
+    var sum = 0;
+    var median = 0;
+    var half = Math.floor(array.length/2);
     for (let i = 0; i < array.length; i++) {
         sum += array[i];
     }
-    return '{min: ' + Math.min(...array) + ', median: ' +  + ', max: ' + Math.max(...array) + ', variance: ' + variance + ', mean: ' + sum/array.length + ', length: ' + array.length + ', sum: ' + sum + ', standard_deviation: ' + stddev + '}';
+    if (array.length % 2) {
+        median = array[half];
+    }
+    else{
+        median = (array[half-1]+array[half])/2.0;
+    }
+    var mean = sum/array.length;
+    var variance = variance(array, mean);
+    
+    return '{min: ' + Math.min(...array) + ', median: ' + median + ', max: ' + Math.max(...array) + ', variance: ' + variance + ', mean: ' + mean + ', length: ' + array.length + ', sum: ' + sum + ', standard_deviation: ' + Math.sqrt(variance) + '}';
 }
 
