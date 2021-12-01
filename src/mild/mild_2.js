@@ -96,6 +96,6 @@ export function removeKeys(object, keyList) {
    //for (let i = 0; i < keyList.length; i++) {
    //   delete object[keyList[i]];
    //}
-   let {[keyList]: omit, ...res} = object
+   let {...[keyList]: omit, ...res} = object
    return res
 }
