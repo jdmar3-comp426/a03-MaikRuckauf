@@ -73,7 +73,7 @@ export function getStatistics(array) {
         max: maxNum,
         variance: vari,
         standard_deviation: stddev
-    }
+    };
     return stats;
     //return "{length: "+len+", sum: "+sum+", mean: "+mean+", median: "+median+", min: "+min+", max: "+max+", variance: "+vari+", standard_deviation: "+stddev+"}";
 }
