@@ -29,9 +29,9 @@ export function getMedian(array) {
     var arr = array.sort(function(a,b) {
         return a-b;
     });
-    var half = Math.floor(array.length/2);
-    if (array.length%2) {return array[half]}
-    return (array[half-1]+array[half])/2.0;
+    var half = Math.floor(arr.length/2);
+    if (arr.length%2) {return arr[half]}
+    return (arr[half-1]+arr[half])/2.0;
 }
 
 /**
