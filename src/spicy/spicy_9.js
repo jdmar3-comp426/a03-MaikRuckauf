@@ -145,17 +145,20 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-    return everyEven(arr, num % 2);
+    return everyEven(arr, isOdd);
 };
 
-
+function isOdd(num) {
+    if (num % 2 == 1) {return true;} 
+    return false;
+}
 /**
  * Write and export a function named "anEvenIsOdd" which takes as input an
  *   array and returns true if at least one of the even-indexed elements in the
  *   array is an odd number. Use the "someEven" function in this function.
  */
 export const anEvenIsOdd = (arr) => {
-    return someEven(arr, num % 2);
+    return someEven(arr, isOdd);
 };
 
 
@@ -166,5 +169,5 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-    
+
 };
