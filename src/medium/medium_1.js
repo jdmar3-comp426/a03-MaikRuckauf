@@ -29,11 +29,10 @@ export function getMedian(array) {
     var arr = array.sort(function(a,b) {
         return a-b;
     });
-    var half = Math.floor(arr.length/2);
     if (arr.length%2) {
-        return arr[half]
+        return arr[(arr.length-1)/2];
     }
-    return (arr[half-1]+arr[half])/2.0;
+    return ((arr[arr.length/2])+(arr[arr.length/2-1]))/2;
 }
 
 /**
