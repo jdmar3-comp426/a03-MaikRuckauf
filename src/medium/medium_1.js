@@ -30,7 +30,9 @@ export function getMedian(array) {
         return a-b;
     });
     var half = Math.floor(arr.length/2);
-    if (arr.length%2) {return arr[half]}
+    if (arr.length%2) {
+        return arr[half]
+    }
     return (arr[half-1]+arr[half])/2.0;
 }
 
