@@ -19,7 +19,7 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
- hybrids = 0
+ var hybrids = 0;
  mpg_data.forEach(function(data) {
      if (data.hybrid) {
          hybrids++;
